@@ -5,6 +5,10 @@ GEM
     puma (6.4.0)
       nio4r (~> 2.0)
     rack (3.0.8)
+    rackup (2.1.0)
+      rack (>= 3)
+      webrick (~> 1.8)
+    webrick (1.8.1)
 
 PLATFORMS
   x86_64-darwin-21
@@ -12,6 +16,7 @@ PLATFORMS
 DEPENDENCIES
   puma
   rack
+  rackup
 
 BUNDLED WITH
    2.4.15
