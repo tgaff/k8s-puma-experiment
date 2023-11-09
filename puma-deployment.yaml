@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puma
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: puma
+  template:
+    metadata:
+      labels:
+        app: puma
+    spec:
+      containers:
+      - name: puma
+        image: puma-local
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 9292
