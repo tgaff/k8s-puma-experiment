@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: puma
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: puma
@@ -18,3 +18,8 @@ spec:
         imagePullPolicy: Never
         ports:
         - containerPort: 9292
+        resources:
+          limits:
+            memory: "256Mi"
+          requests:
+            memory: "128Mi"
