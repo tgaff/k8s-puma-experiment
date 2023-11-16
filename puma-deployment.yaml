@@ -23,3 +23,9 @@ spec:
             memory: "256Mi"
           requests:
             memory: "128Mi"
+        env:
+          - name: WEB_CONCURRENCY
+            value: "1"
+          - name: RAILS_MAX_THREADS
+            value: "5"
+

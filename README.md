@@ -10,3 +10,9 @@ To harass the server:
 ```
 while true; do curl http://localhost:8000 &>/dev/null ; done
 ```
+
+To get stats:
+
+```
+curl "http://localhost:9293/stats?token=12345" | jsonpp
+```

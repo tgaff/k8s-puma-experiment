@@ -10,4 +10,5 @@ COPY . .
 
 # Open up port and start the service
 EXPOSE 9292
-CMD bundle exec rackup app.ru -o 0.0.0.0
+# CMD bundle exec rackup app.ru -o 0.0.0.0
+CMD bundle exec puma -C puma.rb
