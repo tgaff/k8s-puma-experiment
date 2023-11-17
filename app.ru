@@ -6,7 +6,7 @@ class ExpApp
   end
 
   def call(env)
-    body = 'Hello, World!' + "\nI'm #{my_name}" + "\n glump length = #{@glump.length}\n"
+    body = 'Hello, World!' + " ----- I'm #{my_name} ----- ".ljust(30) + "glump length = #{@glump.length}\n"
     @glump.push JUNK+"alsdkfjasf"
     [200, { 'content-type' => 'text/plain', 'content-length' => body.length.to_s }, [body]]
   end
@@ -14,7 +14,7 @@ class ExpApp
   def my_name
     return @my_name if @my_name
 
-    @my_name = "#{FIRST_NAMES.sample} #{rand(9999)}".freeze
+    @my_name = "#{FIRST_NAMES.sample} #{rand(9999).to_s.ljust(4)}".freeze
     puts "Set my name: #{@my_name}"
     @my_name
   end

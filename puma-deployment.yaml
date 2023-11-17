@@ -17,15 +17,23 @@ spec:
         image: puma-local
         imagePullPolicy: Never
         ports:
-        - containerPort: 9292
+          - containerPort: 9292
+          - containerPort: 9293
+
+          # - name: http-port
+          #   containerPort: 9292
+          #   hostPort: 9292
+          # - name: control-port
+          #   containerPort: 9293
+          #   hostPort: 9293
         resources:
           limits:
-            memory: "256Mi"
+            memory: "128Mi"
           requests:
             memory: "128Mi"
         env:
           - name: WEB_CONCURRENCY
-            value: "1"
+            value: "0"
           - name: RAILS_MAX_THREADS
-            value: "5"
+            value: "3"
 
