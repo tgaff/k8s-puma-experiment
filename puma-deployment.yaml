@@ -36,4 +36,6 @@ spec:
             value: "0"
           - name: RAILS_MAX_THREADS
             value: "3"
+          - name: WAIT_FACTOR
+            value: "200"
 
