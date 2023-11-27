@@ -7,8 +7,10 @@ class ExpApp
   end
 
   def call(env)
-    body = 'Hello, World!' + " ----- I'm #{my_name} ----- ".ljust(30) + "glump length = #{@glump.length}\n"
-    @glump.push JUNK+"alsdkfjasf"
+    body = 'Hello, World!' + " ----- I'm #{my_name} ----- ".ljust(30) + "[#{short_puma_config}] glump length = #{@glump.length}\n"
+
+    # glump is here to eat memory and help us achieve OOM.
+    @glump.push JUNK + body
 
     wait_as_needed
 
@@ -24,12 +26,16 @@ class ExpApp
   end
 
   def wait_as_needed
-    @wait_factor ||= Integer(ENV['WAIT_FACTOR'] || 0)
-
-    wait_time = @wait_factor * 0.001
-    sleep wait_time
+    sleep (wait_factor * 0.001)
   end
 
+  def short_puma_config
+    @short_puma_config ||= "P#{ENV.fetch('WEB_CONCURRENCY')}T#{ENV.fetch('RAILS_MAX_THREADS','x')}-W#{wait_factor}".freeze
+  end
+
+  def wait_factor
+    @wait_factor ||= Integer(ENV['WAIT_FACTOR'] || 0)
+  end
 end
 
 
