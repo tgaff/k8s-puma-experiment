@@ -27,7 +27,9 @@ docker run -it --privileged --pid=host justincormack/nsenter1
 
 In this one you can use `dmesg` or `ps -o pid,vsz,rss,comm | grep ruby`
 
-##### third - a single requester to see output
+Also `watch 'dmesg | tail -10'` can be useful for watching for Out of memory oom.
+
+##### third - a single requester to see the puma server output
 
 ```sh
 while true; do curl http://localhost:8000; done
