@@ -1,3 +1,9 @@
+# build docker image locally
+
+```
+docker build . -t puma-local
+```
+
 # setup with kubernetes
 
 ```
