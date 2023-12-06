@@ -1,4 +1,6 @@
+jmeter/webreports/**
 jmeter/webreport
 jmeter/output
 jmeter/output.txt
 jmeter.log
+
