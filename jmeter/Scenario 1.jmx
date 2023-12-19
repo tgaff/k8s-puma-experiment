@@ -21,7 +21,7 @@
         <longProp name="ThreadGroup.start_time">1373789594000</longProp>
         <longProp name="ThreadGroup.end_time">1373789594000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.duration">600</stringProp>
         <stringProp name="ThreadGroup.delay">1</stringProp>
         <stringProp name="TestPlan.comments">Virtual Users Running Scenario 1. 
 Make test last 1 minute (see Scheduler)</stringProp>
@@ -38,6 +38,7 @@ Make test last 1 minute (see Scheduler)</stringProp>
           <stringProp name="TestPlan.comments">Notice Timeouts:
 Read to 30s
 Connect to 5s</stringProp>
+          <stringProp name="HTTPSampler.implementation">HttpClient4</stringProp>
           <stringProp name="HTTPSampler.connect_timeout">5000</stringProp>
           <stringProp name="HTTPSampler.response_timeout">30000</stringProp>
         </ConfigTestElement>
